@@ -1,5 +1,6 @@
-package com.iba.controller._main;
+package com.iba.controller.impl;
 
+import com.iba.controller.ApplicationController;
 import com.iba.dto.UserDTO;
 import com.iba.service.ApplicationService;
 import lombok.AllArgsConstructor;
@@ -12,7 +13,7 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
-public class ApplicationController {
+public class ApplicationControllerImpl implements ApplicationController {
 
     private final ApplicationService service;
 

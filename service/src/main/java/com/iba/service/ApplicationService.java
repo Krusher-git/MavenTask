@@ -1,23 +1,9 @@
 package com.iba.service;
 
-import com.iba.dto.ApplicationModelMapper;
 import com.iba.dto.UserDTO;
-import com.iba.entity.UserEntity;
-import com.iba.repository.ApplicationRepository;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@AllArgsConstructor
-@Service
-public class ApplicationService {
-
-    private final ApplicationRepository repository;
-    private final ApplicationModelMapper mapper;
-
-    public List<UserDTO> getAllUsers() {
-        List<UserEntity> entities = repository.findAll();
-        return mapper.mapToDTO(entities);
-    }
+public interface ApplicationService {
+    List<UserDTO> getAllUsers();
 }
