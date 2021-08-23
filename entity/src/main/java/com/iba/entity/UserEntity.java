@@ -16,6 +16,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 public class UserEntity {
+
     @Id
     private int id;
 

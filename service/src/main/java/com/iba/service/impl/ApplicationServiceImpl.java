@@ -15,6 +15,7 @@ import java.util.List;
 public class ApplicationServiceImpl implements ApplicationService {
 
     private final ApplicationRepository repository;
+
     private final ApplicationModelMapper mapper;
 
     public List<UserDTO> getAllUsers() {
