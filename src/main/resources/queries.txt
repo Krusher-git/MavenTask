@@ -1,0 +1,39 @@
+-- Task 1
+select department_id, name, salary
+from employee as a
+where salary > (select salary
+                from employee
+                where employee.id = a.chief_id);
+
+
+-- Task 2
+select department_id, name, salary
+from employee
+where ROW (department_id, salary) in (
+    select department_id, max(salary) as salary
+    from employee
+    group by department_id);
+
+
+-- Task 3
+select department_id
+from employee
+group by department_id
+having count(name) <= 3;
+
+
+-- Task 4
+select department_id, name
+from employee
+where chief_id is null
+   or row (chief_id, department_id) not in (select id, department_id from employee);
+
+
+-- Task 5
+select department_id, sum(salary) as sum_salary
+from employee
+group by department_id
+having sum(salary) = (select max(sum_salary)
+                      from (select sum(salary) as sum_salary
+                            from employee
+                            group by employee.department_id) as b);
