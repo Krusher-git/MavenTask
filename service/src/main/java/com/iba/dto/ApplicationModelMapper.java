@@ -3,7 +3,6 @@ package com.iba.dto;
 import com.iba.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -17,18 +16,22 @@ public class ApplicationModelMapper {
 
     public List<UserDTO> mapToDTO(List<UserEntity> entities) {
 
-        List usersDTO = entities
+        List<UserDTO> usersDTO = entities
                 .stream()
                 .map(entity -> modelMapper.map(entity, UserDTO.class))
                 .collect(Collectors.toList());
+
         return usersDTO;
     }
 
     public List<UserEntity> mapToEntity(List<UserDTO> usersDTO) {
-        List entities = usersDTO
+
+        List<UserEntity> entities = usersDTO
                 .stream()
                 .map(userDTO -> modelMapper.map(userDTO, UserEntity.class))
                 .collect(Collectors.toList());
+
         return entities;
     }
+
 }

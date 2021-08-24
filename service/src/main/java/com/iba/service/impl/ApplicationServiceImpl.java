@@ -15,11 +15,13 @@ import java.util.List;
 public class ApplicationServiceImpl implements ApplicationService {
 
     private final ApplicationRepository repository;
-
     private final ApplicationModelMapper mapper;
 
     public List<UserDTO> getAllUsers() {
+
         List<UserEntity> entities = repository.findAll();
+
         return mapper.mapToDTO(entities);
     }
+
 }
