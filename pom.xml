@@ -7,7 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>multi-module</artifactId>
     <packaging>pom</packaging>
-    <version>${multi-module-version}</version>
+    <version>1.0-SNAPSHOT</version>
 
     <modules>
         <module>service</module>
@@ -73,7 +73,6 @@
         <modelmapper-version>2.4.4</modelmapper-version>
         <lombok-version>1.18.10</lombok-version>
         <spring-boot-version>2.5.3</spring-boot-version>
-        <multi-module-version>1.0-SNAPSHOT</multi-module-version>
     </properties>
 
 </project>
