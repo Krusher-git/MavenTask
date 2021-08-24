@@ -19,7 +19,6 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>repository</artifactId>
             <version>${project.version}</version>
-            <scope>compile</scope>
         </dependency>
 
     </dependencies>
